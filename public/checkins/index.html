@@ -9,12 +9,26 @@
     <title>Weather and Air Quality</title>
 </head>
 <body>
+  <div class="container">
     <h1>The Weather Here</h1>
     <a href="../index.html">back to check-in page</a>
     <br><br>
     <div id="checkin-map"></div>
-    <div id="data-area"></div>
-    
+    <div id="data-area">
+      <table id="data-table">
+        <tr>
+          <th class="th-city">City / Area</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Temperature</th>
+          <th>Conditions</th>
+          <th class="center">AQI</th>
+          <th>Log entry</th>
+        </tr>
+
+      </table>
+    </div>
+  </div>
     <script src="./checkins.js"></script>
 </body>
 </html>

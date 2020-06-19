@@ -49,8 +49,8 @@ function geoFindMe() {
     map.setView([latitude, longitude], 9);
 
     marker.bindTooltip(
-        `City: <strong>${city}</strong><br>Temp: <strong>${currentTemp} °C</strong> (${currentCondition})<br>
-        AQI: <strong>${airQualityIndex}</strong>`).openTooltip();
+        `City: <strong>${city}</strong><br\>Temp: <strong>${currentTemp} °C</strong> (${currentCondition})<br>
+        Air Quality Index: <strong>${airQualityIndex}</strong>`).openTooltip();
   }
 
   function error() {
