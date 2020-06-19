@@ -1,0 +1,16 @@
+#checkin-map {
+    height: 500px;
+}
+
+/* input#userid {
+    ["size=3"]
+} */
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 10px;;
+}
+
+.popup {
+    background-color: lightpink;
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+
+* + * {
+  margin-top: 10px;
+}
+
+.container {
+  padding: 5px 10px;
+  max-width: 500px;
+}
+
+#map {
+  height: 300px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.data-div {
+  background-color: lightyellow;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-decoration: none;
+  margin-right: 20px;;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
