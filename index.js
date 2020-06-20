@@ -19,6 +19,13 @@ app.post("/api", (request, response) => {
   const data = request.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
+  // console.log(data.city)
+
+  // check and remove any entries from the db for the same city as received in this request
+  database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
+    console.log(`removed ${numRemoved} record(s).`)
+  });
+
   database.insert(data); //save received data into database
   response.json(data); //send back a json object with received data, as a confirmation
 

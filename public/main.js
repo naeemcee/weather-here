@@ -28,7 +28,7 @@ function geoFindMe() {
     //pass latitude and longitude to to get weather info and air quality info
     const api_url = `weather_aq/${latitude}/${longitude}`;
     const response = await fetch(api_url);
-    console.log(response);
+    // console.log(response);
     const data = await response.json();
     console.log(data);
 

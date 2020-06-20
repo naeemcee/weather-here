@@ -47,10 +47,10 @@
           </li>
           <li>
             Client gets geo coordinates via browser navigator call and sends the
-            location data to backend to obtain weather and air-quality data.
+            location data to the backend to lookup weather and air-quality data.
           </li>
           <li>
-            Server makes two API calls; for weather and for Air Quality data
+            Backend makes two API calls; for Weather and for Air Quality data
             respectively, and sends it back to client.
           </li>
           <li>
@@ -60,14 +60,14 @@
           <li>
             If the client clicks the 'add to log' button, server adds the
             weather and air-quality data to the logbook database, using
-            Node-Nedb library.
+            Node-Nedb library. Only the lastest entry for a particular location is maintained in the database.
           </li>
           <li>
-            Client can ask to see the logbook entries by clicking on the 'View
+            Client can look at all logbook entries captured so far by clicking on the 'View
             log' button.
           </li>
           <li>
-            Database entries are sent to client where it is plotted on a Leaflet
+            Database entries are sent to client to be displayed in a table as well as plotted on a Leaflet
             map with tooltip loaded with the details.
           </li>
         </ul>

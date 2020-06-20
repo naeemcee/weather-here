@@ -1,4 +1,4 @@
-const dataTable = document.getElementById('data-table')
+const dataTable = document.getElementById("data-table");
 
 var checkinMap = L.map("checkin-map", { center: [0, 0], zoom: 1 });
 const attribution = {
@@ -32,44 +32,59 @@ async function getData() {
   const response = await fetch("/data");
   const responseJSON = await response.json();
   const data = responseJSON;
-  // console.log(data);  
 
-  data.forEach((element) => {
-    let aqiCategory = ''
-    const aqi = element.airQualityIndex
-    if(aqi > 300)
-      aqiCategory = 'maroon'    //Hazardous
-    else if(aqi > 200)
-      aqiCategory = 'purple'    //Very unhealthy
-    else if(aqi > 150)
-      aqiCategory = 'red'       //Unhealthy
-    else if(aqi > 100)
-      aqiCategory = 'orange'    //Unhealthy for sensitive groups
-    else if(aqi > 50)
-      aqiCategory = 'yellow'    //Moderate
-    else
-      aqiCategory = 'green'     //Good
+  document.getElementById('db-entries').textContent = `Total database entries: ${data.length}`
+
+  for (i = 0; i < data.length; i++) {
+    let aqiCategory = "";
+    const aqi = data[i].airQualityIndex;
+
+    if (aqi > 300) aqiCategory = "maroon";
+    //Hazardous
+    else if (aqi > 200) aqiCategory = "purple";
+    //Very unhealthy
+    else if (aqi > 150) aqiCategory = "red";
+    //Unhealthy
+    else if (aqi > 100) aqiCategory = "orange";
+    //Unhealthy for sensitive groups
+    else if (aqi > 50) aqiCategory = "yellow";
+    //Moderate
+    else aqiCategory = "green"; //Good
 
     const tableRow = `<tr>
-                      <td>${element.city}</td>
-                      <td>${element.latitude.toFixed(2)} °</td>
-                      <td>${element.longitude.toFixed(2)} °</td>
-                      <td>${element.currentTemp} °C</td>
-                      <td>${element.currentCondition}</td>
-                      <td class="center ${aqiCategory}">${element.airQualityIndex}</td>
-                      <td>${new Intl.DateTimeFormat('en-GB').format(element.timestamp)}</td>
-                      </tr>`
-    dataTable.insertAdjacentHTML("beforeend", tableRow)
+                        <td>${data[i].city}</td>
+                        <td>${data[i].latitude.toFixed(2)} °</td>
+                        <td>${data[i].longitude.toFixed(2)} °</td>
+                        <td>${data[i].currentTemp} °C</td>
+                        <td>${data[i].currentCondition}</td>
+                        <td class="center ${aqiCategory}">${
+      data[i].airQualityIndex
+    }</td>
+                        <td>${new Intl.DateTimeFormat("en-GB").format(
+                          data[i].timestamp
+                        )}</td>
+                        </tr>`;
+    dataTable.insertAdjacentHTML("beforeend", tableRow);
 
-    let marker = L.marker([element.latitude, element.longitude]).addTo(checkinMap);
+    let j = data.length - i - 1   //to plot markers in the reverse order so that latest data tooltip will be open
+    let marker = L.marker([data[j].latitude, data[j].longitude]).addTo(
+      checkinMap
+    );
     marker
       .bindPopup(
-        `<span>City: <strong>${element.city}</strong><br>Temp: <strong>${element.currentTemp}°C</strong> 
-        (${element.currentCondition})<br>Air Quality Index: <strong>${element.airQualityIndex}</strong></span><br>
-        <span>Logged on: ${new Intl.DateTimeFormat('en-GB').format(element.timestamp)}</span>`
+        `<span>City / Area: <strong>${data[j].city}</strong><br>Temp: <strong>${
+          data[j].currentTemp
+        }°C</strong> 
+        (${data[j].currentCondition})<br>Air Quality Index: <strong>${
+          data[j].airQualityIndex
+        }</strong></span><br>
+        <span>Logged on: ${new Intl.DateTimeFormat("en-GB").format(
+          data[j].timestamp
+        )}</span>`
       )
       .openPopup();
-  });
+  }
+
 }
 
 getData();

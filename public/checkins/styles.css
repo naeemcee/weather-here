@@ -1,5 +1,5 @@
 #checkin-map {
-    height: 400px;
+    height: 300px;
 }
 
 * {
@@ -18,6 +18,11 @@
 .btn {
     padding: 5px 10px;
     border-radius: 10px;;
+}
+
+#db-entries {
+  padding: 10px 0;
+  
 }
 
 .popup {
