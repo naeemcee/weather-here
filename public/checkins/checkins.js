@@ -37,6 +37,8 @@ async function getData() {
 
   for (i = 0; i < data.length; i++) {
     let aqiCategory = "";
+    const latDirection = (data[i].latitude < 0) ? 'S' : 'N'
+    const lonDirection = (data[i].longitude < 0) ? 'E' : 'W'
     const aqi = data[i].airQualityIndex;
 
     if (aqi > 300) aqiCategory = "maroon";
@@ -53,9 +55,9 @@ async function getData() {
 
     const tableRow = `<tr>
                         <td>${data[i].city}</td>
-                        <td>${data[i].latitude.toFixed(2)} °</td>
-                        <td>${data[i].longitude.toFixed(2)} °</td>
-                        <td>${data[i].currentTemp} °C</td>
+                        <td>${data[i].latitude.toFixed(2)}° ${latDirection}</td>
+                        <td>${data[i].longitude.toFixed(2)}° ${lonDirection}</td>
+                        <td>${data[i].currentTemp.toFixed(1)} °C</td>
                         <td>${data[i].currentCondition}</td>
                         <td class="center ${aqiCategory}">${
       data[i].airQualityIndex
