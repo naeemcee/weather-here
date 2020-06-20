@@ -10,30 +10,35 @@ app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
 const database = new Datastore("./_data/database.db");
-database.loadDatabase();
-database.find({}).sort({ timestamp: -1 });
+// database.loadDatabase();
+// database.find({}).sort({ timestamp: -1 });
 // database.insert({name: 'Naeem', age: 52, bloodType: 'A+'})
 
 app.post("/api", (request, response) => {
   console.log("POST request received with geo-coordinates & weather info..!");
+  database.loadDatabase();
   const data = request.body;
-  const timestamp = Date.now();
-  data.timestamp = timestamp;
-  // console.log(data.city)
+  if (data.city) {
+    const timestamp = Date.now();
+    data.timestamp = timestamp;
+    // console.log(data.city)
 
-  // check and remove any entries from the db for the same city as received in this request
-  database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
-    console.log(`removed ${numRemoved} record(s).`)
+    // check and remove any entries from the db for the same city as received in this request
+    database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
+      console.log(`removed ${numRemoved} record(s).`)
   });
 
   database.insert(data); //save received data into database
   response.json(data); //send back a json object with received data, as a confirmation
 
   // console.log(database)
+  }
+  response.end()
 });
 
 app.get("/data", (request, response) => {
   console.log("GET request received for all database entries..!");
+  database.loadDatabase();
   // const data = database.getAllData()
   const data = database
     .find({})
