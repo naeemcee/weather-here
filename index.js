@@ -10,13 +10,13 @@ app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
 const database = new Datastore("./_data/database.db");
-// database.loadDatabase();
+database.loadDatabase();
 // database.find({}).sort({ timestamp: -1 });
 // database.insert({name: 'Naeem', age: 52, bloodType: 'A+'})
 
 app.post("/api", (request, response) => {
   console.log("POST request received with geo-coordinates & weather info..!");
-  database.loadDatabase();
+  // database.loadDatabase();
   const data = request.body;
   if (data.city) {
     const timestamp = Date.now();
@@ -38,7 +38,7 @@ app.post("/api", (request, response) => {
 
 app.get("/data", (request, response) => {
   console.log("GET request received for all database entries..!");
-  database.loadDatabase();
+  // database.loadDatabase();
   // const data = database.getAllData()
   const data = database
     .find({})
