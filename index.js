@@ -76,4 +76,4 @@ app.get("/weather_aq/:lat/:lon", async (request, response) => {
   response.send({ weatherjson, aqjson });
 });
 
-// database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
+database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
