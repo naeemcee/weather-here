@@ -9,11 +9,11 @@ app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
-const database = new Datastore({filename: "./_data/database.db", autoload: true });
-database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
-// database.loadDatabase();
+const database = new Datastore({filename: "./_data/database.db"});
+database.loadDatabase();
 // database.find({}).sort({ timestamp: -1 });
 // database.insert({name: 'Naeem', age: 52, bloodType: 'A+'})
+database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
 
 app.post("/api", (request, response) => {
   console.log("POST request received with geo-coordinates & weather info..!");
