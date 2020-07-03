@@ -32,7 +32,7 @@ app.post("/api", (request, response) => {
   database.insert(data); //save received data into database
   response.json(data); //send back a json object with received data, as a confirmation
 
-  // console.log(database)
+  console.log(database)
   }
   response.end()
 });
