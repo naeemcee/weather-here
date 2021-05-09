@@ -9,7 +9,7 @@ app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
-const database = new Datastore({filename: "./_data/database.db"});
+const database = new Datastore({filename: "./database.db"});
 database.loadDatabase();
 // database.find({}).sort({ timestamp: -1 });
 // database.insert({name: 'Naeem', age: 52, bloodType: 'A+'})
