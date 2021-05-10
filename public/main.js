@@ -34,7 +34,7 @@ function geoFindMe() {
 
     city = data.weatherjson.name;
     currentCondition = data.weatherjson.weather[0].description;
-    currentTemp = data.weatherjson.main.temp;
+    currentTemp = data.weatherjson.main.temp.toFixed(1);
     airQualityIndex = data.aqjson.data.aqi;
 
     status.textContent = "";

@@ -12,6 +12,7 @@ L.tileLayer(
   attribution
 ).addTo(checkinMap);
 
+//draw equator
 L.polyline(
   [
     [0, -360],
@@ -20,6 +21,7 @@ L.polyline(
   { color: "grey", weight: 1 }
 ).addTo(checkinMap); //equator
 
+//draw prime meridian
 L.polyline(
   [
     [360, 0],
@@ -57,7 +59,7 @@ async function getData() {
                         <td>${data[i].city}</td>
                         <td>${data[i].latitude.toFixed(2)}° ${latDirection}</td>
                         <td>${data[i].longitude.toFixed(2)}° ${lonDirection}</td>
-                        <td>${data[i].currentTemp.toFixed(1)} °C</td>
+                        <td>${data[i].currentTemp} °C</td>
                         <td>${data[i].currentCondition}</td>
                         <td class="center ${aqiCategory}">${
       data[i].airQualityIndex
