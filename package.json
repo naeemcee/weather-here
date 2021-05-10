@@ -12,5 +12,18 @@
     "express": "^4.17.1",
     "nedb": "^1.8.0",
     "node-fetch": "^2.6.1"
+<<<<<<< HEAD
   }
+=======
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeemcee/weather-here.git"
+  },
+  "bugs": {
+    "url": "https://github.com/naeemcee/weather-here/issues"
+  },
+  "homepage": "https://github.com/naeemcee/weather-here#readme"
+>>>>>>> parent of baa183f (Merge branch 'master' into env-here-heroku)
 }
