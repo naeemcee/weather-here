@@ -28,13 +28,13 @@ function geoFindMe() {
     //pass latitude and longitude to to get weather info and air quality info
     const api_url = `weather_aq/${latitude}/${longitude}`;
     const response = await fetch(api_url);
-    console.log(response);
+    // console.log(response);
     const data = await response.json();
     console.log(data);
 
     city = data.weatherjson.name;
     currentCondition = data.weatherjson.weather[0].description;
-    currentTemp = data.weatherjson.main.temp;
+    currentTemp = data.weatherjson.main.temp.toFixed(1);
     airQualityIndex = data.aqjson.data.aqi;
 
     status.textContent = "";
@@ -49,8 +49,8 @@ function geoFindMe() {
     map.setView([latitude, longitude], 9);
 
     marker.bindTooltip(
-        `City: <strong>${city}</strong><br>Temp: <strong>${currentTemp} °C</strong> (${currentCondition})<br>
-        AQI: <strong>${airQualityIndex}</strong>`).openTooltip();
+        `City: <strong>${city}</strong><br\>Temp: <strong>${currentTemp} °C</strong> (${currentCondition})<br>
+        Air Quality Index: <strong>${airQualityIndex}</strong>`).openTooltip();
   }
 
   function error() {

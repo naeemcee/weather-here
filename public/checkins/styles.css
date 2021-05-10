@@ -1,16 +1,72 @@
 #checkin-map {
-    height: 500px;
+    height: 300px;
 }
 
-/* input#userid {
-    ["size=3"]
-} */
+* {
+  margin: 0;
+}
+
+* + p {
+  margin-top: 1.5rem;
+}
+
+.container {
+  padding: 10px;
+  max-width: 80%;
+}
 
 .btn {
     padding: 5px 10px;
     border-radius: 10px;;
 }
 
+#db-entries {
+  padding: 10px 0;
+  
+}
+
 .popup {
     background-color: lightpink;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+th {
+  text-align: left;
+  padding: 5px 0;
+  border-bottom: 1px solid black;
+}
+
+tr {
+  height: 1.6rem;
+}
+
+tr:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.center {
+  text-align: center;
+}
+
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
+.purple {
+  background-color: purple;
+}
+.maroon {
+  background-color: maroon;
 }

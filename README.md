@@ -1,2 +1,2 @@
 # weather-here
- full-stack weather info app
+ Full-stack weather info app
