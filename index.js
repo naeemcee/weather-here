@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000
 
 const apikey_aqi = process.env.API_KEY_AQI
 const apikey_weather = process.env.API_KEY_WEATHER
-console.log("API KEYS:",apikey_aqi, apikey_weather)
 
 app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
