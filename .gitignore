@@ -150,3 +150,4 @@ Temporary Items
 .DS_Store
 .env
 _data/
+database.db
