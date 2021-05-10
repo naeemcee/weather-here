@@ -1,17 +1,16 @@
 {
   "name": "data-selfie",
   "version": "1.0.0",
-  "description": "Full-stack weather info app",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^9.0.1",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
     "node-fetch": "^2.6.1"
-
+  }
 }

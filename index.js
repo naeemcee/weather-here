@@ -1,13 +1,9 @@
 const express = require("express");
 const Datastore = require("nedb");
 const fetch = require("node-fetch");
-require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000
-
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY
-const AQI_API_KEY = process.env.API_KEY_AQI
 
 app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
@@ -74,7 +70,7 @@ app.get("/weather_aq/:lat/:lon", async (request, response) => {
   const weatherjson = await weatherinfo.json();
   // console.log(weatherjson);
 
-  const aq_url = `https://api.waqi.info/feed/geo:${lat};${lon}/?token=${AQI_API_KEY}`;
+  const aq_url = `https://api.waqi.info/feed/geo:${lat};${lon}/?token=fdfcbe33ea338e47fdfa886936e3098f5fdacbf5`;
   const aqinfo = await fetch(aq_url); //lookup airquality for the lat lon
   const aqjson = await aqinfo.json();
   console.log(aqjson);
