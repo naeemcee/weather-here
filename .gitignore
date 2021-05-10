@@ -69,7 +69,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-
+.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -148,3 +148,4 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
 .DS_Store
+_data/
