@@ -1,7 +1,7 @@
 {
   "name": "data-selfie",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full-stack weather info app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^9.0.1",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
-    "node-fetch": "^2.6.0"
-  }
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "underscore": ">=1.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeemcee/weather-here.git"
+  },
+  "bugs": {
+    "url": "https://github.com/naeemcee/weather-here/issues"
+  },
+  "homepage": "https://github.com/naeemcee/weather-here#readme"
 }
