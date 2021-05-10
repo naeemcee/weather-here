@@ -6,8 +6,8 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000
 
-const WEATHER_API_KEY = process.env.API_KEY_WEATHER
-const AQI_API_KEY = process.env.API_KEY_AQI
+// const WEATHER_API_KEY = process.env.API_KEY_WEATHER
+// const AQI_API_KEY = process.env.API_KEY_AQI
 
 app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
