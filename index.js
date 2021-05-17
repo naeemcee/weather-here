@@ -16,22 +16,20 @@ app.use(express.json({ limit: "1mb" }));
 const database = new Datastore({filename: "./_data/database.db"});
 database.loadDatabase();
 // database.find({}).sort({ timestamp: -1 });
-// database.insert({name: 'Naeem', age: 52, bloodType: 'A+'})
 // database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
 
 app.post("/api", (request, response) => {
   console.log("POST request received with geo-coordinates & weather info..!");
-  // database.loadDatabase();
   const data = request.body;
   if (data.city) {
     const timestamp = Date.now();
     data.timestamp = timestamp;
     // console.log(data.city)
 
-    // check and remove any entries from the db for the same city as received in this request
+  // check and remove any entries from the db for the same city as received in this request
   //   database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
   //     console.log(`removed ${numRemoved} record(s).`)
-  // });
+  //   });
 
   database.insert(data); //save received data into database
   response.json(data); //send back a json object with received data, as a confirmation
