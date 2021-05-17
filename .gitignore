@@ -151,3 +151,6 @@ Temporary Items
 _data/
 database.db
 _data/database.db
+public/.DS_Store
+_data/database.db
+.gitignore
