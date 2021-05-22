@@ -1,7 +1,10 @@
 const express = require("express");
-const Datastore = require("nedb");
 const fetch = require("node-fetch");
 require('dotenv').config();
+
+const Datastore = require("nedb")
+, database = new Datastore({filename: "./_data/database.db"});
+database.loadDatabase();
 
 const app = express();
 const port = process.env.PORT || 3000
@@ -13,8 +16,6 @@ app.listen(port, () => console.log(`listening on port  ${port}...`));
 app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
-const database = new Datastore({filename: "./_data/database.db"});
-database.loadDatabase();
 // database.find({}).sort({ timestamp: -1 });
 // database.persistence.setAutocompactionInterval(60000)   //auto compaction set to every minute, enable if required.
 
