@@ -2,11 +2,11 @@
 {"latitude":55.755826,"longitude":37.6173,"currentTemp":27.26,"currentCondition":"overcast clouds","airQualityIndex":40,"city":"Moscow Oblast","timestamp":1592416663848,"_id":"703TSNRIBLYseIhE"}
 {"latitude":19.01,"longitude":72.85,"currentTemp":30,"currentCondition":"haze","airQualityIndex":31,"city":"Mumbai","timestamp":1592311123547,"_id":"7scrG2KeJDeoTgp6"}
 {"latitude":-26.204161,"longitude":28.043,"currentTemp":3.08,"currentCondition":"clear sky","airQualityIndex":55,"city":"Johannesburg","timestamp":1592453563955,"_id":"B5CL4fiptRZhZuWn"}
+{"latitude":11.86671894655884,"longitude":75.35986166651362,"currentTemp":"27.2","currentCondition":"overcast clouds","airQualityIndex":150,"city":"Kannur","timestamp":1621787525675,"_id":"EXv9B94KWrDQMQMW"}
 {"latitude":31.230416,"longitude":121.473701,"currentTemp":28.62,"currentCondition":"overcast clouds","airQualityIndex":117,"city":"Shanghai Municipality","timestamp":1592412908895,"_id":"IIzOrRvUklIGguv4"}
 {"latitude":37.774929,"longitude":-122.419416,"currentTemp":23.02,"currentCondition":"clear sky","airQualityIndex":21,"city":"San Francisco","timestamp":1592416790831,"_id":"OTKnahxsmEYYoNao"}
 {"latitude":35.689487,"longitude":139.691706,"currentTemp":26.49,"currentCondition":"broken clouds","airQualityIndex":9,"city":"Tokyo","timestamp":1592640953815,"_id":"R0o0DscYr9P9VDlq"}
 {"latitude":-31.956,"longitude":115.8548,"currentTemp":7.43,"currentCondition":"clear sky","airQualityIndex":30,"city":"South Perth","timestamp":1592592407194,"_id":"Sr29hfpgJNj9m1SJ"}
-{"latitude":11.866687077853559,"longitude":75.35984401006694,"currentTemp":"27.4","currentCondition":"overcast clouds","airQualityIndex":128,"city":"Kannur","timestamp":1621783176380,"_id":"VAIn0mTm0NTdn0pr"}
 {"latitude":51.51,"longitude":-0.13,"currentTemp":20.89,"currentCondition":"broken clouds","airQualityIndex":44,"city":"London","timestamp":1592311160570,"_id":"YCXGKWlzxiqkDW8t"}
 {"latitude":52.520007,"longitude":13.404954,"currentTemp":24.09,"currentCondition":"few clouds","airQualityIndex":22,"city":"Mitte","timestamp":1592501650360,"_id":"aqy56WG4p470oJ2E"}
 {"latitude":24.7332864,"longitude":46.661632000000004,"currentTemp":38,"currentCondition":"scattered clouds","airQualityIndex":66,"city":"Riyadh","timestamp":1592640927155,"_id":"cPYOWGLqCdXD91dd"}
@@ -15,3 +15,7 @@
 {"latitude":28.63576,"longitude":77.22445,"currentTemp":"32.6","currentCondition":"scattered clouds","airQualityIndex":144,"city":"Connaught Place","timestamp":1620636136826,"_id":"leFOSY9NlYIy9JbP"}
 {"latitude":30,"longitude":75,"currentTemp":"41.0","currentCondition":"scattered clouds","airQualityIndex":181,"city":"Kālānwāli","timestamp":1620637196606,"_id":"tcidd1VP9DG1N77g"}
 {"latitude":24.571839608665375,"longitude":46.83886454427643,"currentTemp":43,"currentCondition":"clear sky","airQualityIndex":19,"city":"Al Khālidīyah","timestamp":1593783998811,"_id":"x3DQ6FV2G6eqLfiF"}
+{"$$deleted":true,"_id":"EXv9B94KWrDQMQMW"}
+{"latitude":11.866716212937066,"longitude":75.35986473134558,"currentTemp":"27.2","currentCondition":"overcast clouds","airQualityIndex":150,"city":"Kannur","timestamp":1621787588805,"_id":"j6TWuVQlb1YAnTsE"}
+{"$$deleted":true,"_id":"j6TWuVQlb1YAnTsE"}
+{"latitude":11.866716212937066,"longitude":75.35986473134558,"currentTemp":"27.3","currentCondition":"overcast clouds","airQualityIndex":150,"city":"Kannur","timestamp":1621787614968,"_id":"2X0e8SzdC46pzPyn"}

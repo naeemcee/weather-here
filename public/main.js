@@ -70,6 +70,7 @@ geoFindMe();
 
 async function logData() {
   //send geolocation data to server for saving to database
+  console.log('logging current data to database')
   const data = {
     latitude,
     longitude,

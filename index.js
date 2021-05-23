@@ -28,17 +28,19 @@ app.post("/api", (request, response) => {
     // console.log(data.city)
 
   // check and remove any entries from the db for the same city as received in this request
-    database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
+    database.remove({ city: data.city }, { multi: false }, function (err, numRemoved) {
       console.log(`removed ${numRemoved} record(s).`)
       database.insert(data, (err, doc) => {
-        console.log(`${doc.length} record inserted`)
-      }); //save received data into database
-      response.json(data); //send back a json object with received data, as a confirmation
+        if (err) console.log('error saving to db', err)
+        // console.log(`${doc} record inserted`)
+        console.log('----------------------------------data successfully inserted to db')
+        response.json(data); //send back a json object with received data, as a confirmation
+      });
     });
-  console.log(database)
+  // console.log(database)
 
+  // response.end()
   }
-  response.end()
 });
 
 app.get("/data", (request, response) => {
@@ -77,6 +79,6 @@ app.get("/weather_aq/:lat/:lon", async (request, response) => {
   const aq_url = `https://api.waqi.info/feed/geo:${lat};${lon}/?token=${apikey_aqi}`;
   const aqinfo = await fetch(aq_url); //lookup airquality for the lat lon
   const aqjson = await aqinfo.json();
-  console.log(aqjson);
+  // console.log(aqjson);
   response.send({ weatherjson, aqjson });
 });
