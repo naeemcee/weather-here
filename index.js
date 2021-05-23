@@ -28,14 +28,15 @@ app.post("/api", (request, response) => {
     // console.log(data.city)
 
   // check and remove any entries from the db for the same city as received in this request
-  //   database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
-  //     console.log(`removed ${numRemoved} record(s).`)
-  //   });
-
-  database.insert(data); //save received data into database
-  response.json(data); //send back a json object with received data, as a confirmation
-
+    database.remove({ city: data.city }, { multi: true }, function (err, numRemoved) {
+      console.log(`removed ${numRemoved} record(s).`)
+      database.insert(data, (err, doc) => {
+        console.log(`${doc.length} record inserted`)
+      }); //save received data into database
+      response.json(data); //send back a json object with received data, as a confirmation
+    });
   console.log(database)
+
   }
   response.end()
 });
